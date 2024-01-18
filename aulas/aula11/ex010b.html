@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport</title>
+</head>
+<body>
+    <h1>Sistema de validação de país</h1>
+    <p>Insira seu país: <input type="text" name="pais" id="txtpais" placeholder="Exemplo:Brasil"></p>
+    <input type="button" value="Verificar" onclick="verificaPais()">
+    <div id="res">
+
+    </div>
+
+
+    <script>
+        function verificaPais() {
+        var pais = window.document.querySelector('input#txtpais')
+        var res = window.document.querySelector('div#res')
+        res.innerHTML = `<p>Seu país é: ${pais.value}</p>`
+            if (pais.value == 'Brasil' || 'BRA' || 'brasil') {
+                res.innerHTML += `<p>Você é um Brasileiro!</p>`
+            } else {
+                res.innerHTML += `<p>Você é Estrangeiro!</p>`
+            }
+        }
+        
+    </script>
+</body>
+</html>
