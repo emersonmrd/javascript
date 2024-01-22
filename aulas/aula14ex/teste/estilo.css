@@ -1,0 +1,79 @@
+@charset "UTF8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(143, 142, 142);
+}
+
+header {
+    color: white;
+    font-size: 1.2em;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 5px;
+}
+div#dados > p{
+    text-align: center;
+    padding: 5px;
+   
+}
+
+div#res > p {
+    text-align: center;
+    padding: 5px;
+}
+
+p.lightgray {
+    background-color: lightgray;
+}
+
+p.darkgray {
+    background-color: darkgray;
+}
+
+#tabuar {
+
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}
+
+div#dados {
+    width: 400px;
+    height: 100px;
+    padding: 20px;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 25px;
+    border-radius: 20px;
+}
+
+div#res {
+        text-align: center;
+        width: 400px;
+        height: 40vh;
+        padding: 20px;
+        background-color: white;
+        margin: auto;
+        border-radius: 20px;
+        font-family: Arial, sans-serif;
+}
+
+h3 {
+    padding-bottom: 10px;
+}
+
+footer {
+    color: white;
+    font-size: 1em;
+    text-align: center;
+}
