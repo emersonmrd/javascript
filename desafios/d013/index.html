@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do aluno(a)</title>
+    <style> 
+        body {
+            font: 12pt Arial;
+        }
+
+        button {
+            font-size: 12pt;
+            padding: 20px;
+        }
+        .reprovado {
+            color: rgb(125, 23, 23);
+            background-color: rgba(255, 0, 0, 0.483);
+        }
+
+        .recuperacao {
+            color: rgb(181, 181, 10);
+            background-color:rgba(255, 255, 0, 0.458);
+        }
+
+        .aprovado {
+            color: rgb(45, 135, 45);
+            background-color: rgba(0, 128, 0, 0.532);
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do aluno(a)</h1>
+    <button onclick="calculaMedia()">Entrar com as notas</button>
+    <section id="resultado">
+        <p>Clique no botão acima para informar as notas do aluno(a).</p>
+    </section>
+    <script> 
+        function calculaMedia() {
+            let saida = document.getElementById('resultado')
+            let aluno = window.prompt('Qual é o nome do aluno(a)?')
+            let nota1 = Number(window.prompt(`Primeira nota de ${aluno}:`))
+            let nota2 = Number(window.prompt(`Seunga de nota de ${aluno}:`))
+            let media = (nota1 + nota2) / 2
+            if (media < 3) {
+                saida.innerHTML = `<h2>Analisando a situação de ${aluno}</h2>`
+                saida.innerHTML += `<p>Com as notas ${nota1.toLocaleString('pt-BR', {style:'decimal', decimal:'BRL'})} e ${nota2.toLocaleString('pt-BR', { style: 'decimal', decimal: 'BRL' })}, <strong>a média é ${media.toLocaleString('pt-BR', { style: 'decimal', decimal: 'BRL' })}</strong></p>`
+                saida.innerHTML += `<p>Com média abaixo de 3,0, o aluno(a) está <strong><mark class="reprovado">REPROVADO(A)</mark></strong></p>`
+            } else if (media <= 6) {
+                saida.innerHTML = `<h2>Analisando a situação de ${aluno}</h2>`
+                saida.innerHTML += `<p>Com as notas ${nota1.toLocaleString('pt-BR', { style: 'decimal', decimal: 'BRL' })} e ${nota2.toLocaleString('pt-BR', { style: 'decimal', decimal: 'BRL' })}, <strong>a média é ${media.toLocaleString('pt-BR', { style: 'decimal', decimal: 'BRL' })}</strong></p>`
+                saida.innerHTML += `<p>Com média entre 3,0 e 6,0, o aluno(a) está <strong><mark class="recuperacao">RECUPERAÇÃO</mark></strong></p>`
+            } else {
+                saida.innerHTML = `<h2>Analisando a situação de ${aluno}</h2>`
+                saida.innerHTML += `<p>Com as notas ${nota1.toLocaleString('pt-BR', { style: 'decimal', decimal: 'BRL' })} e ${nota2.toLocaleString('pt-BR', { style: 'decimal', decimal: 'BRL' })}, <strong>a média é ${media.toLocaleString('pt-BR', { style: 'decimal', decimal: 'BRL' })}</strong></p>`
+                saida.innerHTML += `<p>Com média acima de 6,0, o aluno(a) está <strong><mark class="aprovado">APROVADO(A)</mark></strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
