@@ -26,6 +26,7 @@
     <button onclick="verificaAno()">Verificar</button>
     <section id="saida">
         <p>Informe um ano para saber se ele é bissexto</p>
+        
     </section>
     <script>
         function verificaAno() {
@@ -33,14 +34,21 @@
             let saida = document.getElementById('saida')
             if (ano % 4 != 0 && ano % 400 == 0 ) {
                 saida.innerHTML = `<h2>Analisando o ano de ${ano}...</h2>`
-                saida.innerHTML += `<p>O ano de ${ano} <mark class="bissexto">É BISSEXTO</mark>&#x2705;</p>`
+                saida.innerHTML += `<p id="b">O ano de ${ano} <strong>
+                    <mark class="bissexto">É BISSEXTO</mark></strong></p>`
+                document.getElementById('b').innerHTML += String.fromCodePoint(0x2714);
             } else if (ano % 4 == 0 && !(ano % 100 == 0)) {
                 saida.innerHTML = `<h2>Analisando o ano de ${ano}...</h2>`
-                saida.innerHTML += `<p>O ano de ${ano} <mark class="bissexto">É BISSEXTO</mark></p>`
-                
+                saida.innerHTML += `<p id="b">O ano de ${ano} <strong>
+                    <mark class="bissexto">É BISSEXTO</mark>
+                </strong></p>`
+                document.getElementById('b').innerHTML += String.fromCodePoint(0x2714);
             } else {
                 saida.innerHTML = `<h2>Analisando o ano de ${ano}...</h2>`
-                saida.innerHTML += `<p>O ano de ${ano} <mark class="nbissexto">NÃO É BISSEXTO</mark></p>`
+                saida.innerHTML += `<p id="nb">O ano de ${ano} <strong>
+                    <mark class="nbissexto">NÃO É BISSEXTO</mark>
+                </strong></p>`
+                document.getElementById('nb').innerHTML += String.fromCodePoint(0x274C);
             }
         }
     </script>
